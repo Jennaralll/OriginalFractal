@@ -18,7 +18,8 @@ public void draw(){
 	Fractal(300, 300, 600);
 	if(mySiz <= 1600){
 		Fractal(myX + 300, myY + 300, mySiz + 10);
-		mySiz += 100;
+		second(myX + 100, myY + 100, mySiz + 10);
+		// mySiz += 100;
 	}
 	else if(mySiz > 1600){
 		mySiz = 0;
@@ -26,17 +27,19 @@ public void draw(){
 
 }
 public void Fractal(int x, int y, int siz){
-	// fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	fill((int)(Math.random()*75), (int)(Math.random()*255+150), (int)(Math.random()*255 + 200));
 	ellipse(x, y, siz/2, siz/2);
 	// ellipse(x ,  y + 200, siz/2, siz/2);
 	if(siz > 10){
 		Fractal(x + (siz/2), y, siz/2);
 		Fractal(x - (siz/2), y, siz/2);
+		Fractal(x + (siz/2), y, siz/4);
 	}
 }
 public void second(int x, int y, int siz){
-	triangle(x, y, x, y, siz/2 , siz/2);
-	if(siz > 9){
+	triangle(x, y + 20, x, y, siz/2 , siz/2 - 20);
+	if(siz > 5){
+		fill((int)(Math.random()*200 + 150), (int)(Math.random()*200+ 150), (int)(Math.random()*200 + 150));
 		second(x, y, siz/2);
 		second(x + (siz/2), y, siz/2);
 		second(x+(siz/4), y - (siz/2), siz/2);
