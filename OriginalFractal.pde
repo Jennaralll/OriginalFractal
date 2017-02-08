@@ -37,11 +37,12 @@ public void Fractal(int x, int y, int siz){
 	}
 }
 public void second(int x, int y, int siz){
-	triangle(x, y + 20, x, y, siz/2 , siz/2 - 20);
+	triangle(x-90, y + 180, x+50, y, siz/2 -140 , siz/2 - 100);
 	if(siz > 5){
 		fill((int)(Math.random()*200 + 150), (int)(Math.random()*200+ 150), (int)(Math.random()*200 + 150));
-		second(x, y, siz/2);
-		second(x + (siz/2), y, siz/2);
-		second(x+(siz/4), y - (siz/2), siz/2);
+		second(x + (siz/2), y, (siz/2));
+		second(x+ (siz/4) -50, y, siz/2);
+		second(x+(siz/2) - 50, y - (siz/2), siz/2);
+		second(x+(siz/2), y-(siz/2), siz/2);
 	}
 }
